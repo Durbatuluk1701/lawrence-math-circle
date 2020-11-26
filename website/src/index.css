@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
 }
 
 code {
@@ -14,6 +15,11 @@ code {
 
 #logo {
   width: 100%;
+}
+
+#pageTitle {
+  visibility: hidden;
+  width: 0px;
 }
 
 #navbar {
@@ -42,5 +48,17 @@ code {
   #logo {
     width: 50%;
     margin: auto;
+  }
+}
+
+@media only screen and (min-width: 1090px) {
+  #pageTitle {
+    visibility: visible;
+    font-size: 5rem;
+    width: 75%;
+    text-align: center;
+  }
+  #logo {
+    width: 25%;
   }
 }

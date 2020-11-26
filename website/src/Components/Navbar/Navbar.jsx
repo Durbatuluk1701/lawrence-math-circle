@@ -3,13 +3,13 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 
-const NavBarLink = ({ href, display }) => {
+const NavBarLink = ({ href, children }) => {
     return (
         <NavLink
             activeClassName="currentLink"
             to={href}
         >
-            {display}
+            {children}
         </NavLink>
     )
 }
@@ -18,10 +18,18 @@ export const Navbar = () => {
     return (
         <nav>
             <div id="navbar">
-                <NavBarLink href="/home" display="Home" />
-                <NavBarLink href="/calendar" display="Calendar" />
-                <NavBarLink href="/about-us" display="About Us" />
-                <NavBarLink href="/contact" display="Contact" />
+                <NavBarLink href="/home">
+                    Home
+                </NavBarLink>
+                <NavBarLink href="/calendar">
+                    Calendar
+                </NavBarLink>
+                <NavBarLink href="/about-us">
+                    About Us
+                </NavBarLink>
+                <NavBarLink href="/contact">
+                    Contact
+                </NavBarLink>
             </div>
         </nav>
     );
