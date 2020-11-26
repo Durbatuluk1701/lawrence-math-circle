@@ -1,5 +1,12 @@
 import React from "react"
-import { Header, Home } from "../../Components"
+import {
+    Header,
+    Home,
+    DeadLanding,
+    Contact,
+    AboutUs,
+    Calendar
+} from "../../Components"
 import { Route, Switch } from "react-router-dom"
 
 const pageValues = {
@@ -19,11 +26,23 @@ export const App = () => {
         <>
             <Header navHref={hrefToKey()} />
             <Switch>
+                <Route exact path="/">
+                    <Home />
+                </Route>
                 <Route path="/home">
                     <Home />
                 </Route>
+                <Route path="/calendar">
+                    <Calendar />
+                </Route>
+                <Route path="/about-us">
+                    <AboutUs />
+                </Route>
+                <Route path="/contact">
+                    <Contact />
+                </Route>
                 <Route path="*">
-                    <h2>Lost</h2>
+                    <DeadLanding />
                 </Route>
             </Switch>
         </>

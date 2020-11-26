@@ -8,6 +8,9 @@ const NavBarLink = ({ href, children }) => {
         <NavLink
             activeClassName="currentLink"
             to={href}
+            isActive={(match, location) => {
+                return (location.pathname === "/" && href === "/home") || (match ? match.isExact : false);
+            }}
         >
             {children}
         </NavLink>

@@ -20,6 +20,7 @@ code {
 #pageTitle {
   visibility: hidden;
   width: 0px;
+  overflow: hidden;
 }
 
 #navbar {
@@ -42,6 +43,11 @@ code {
 
 .currentLink {
   background-color: springgreen;
+}
+
+.centered {
+  text-align: center;
+  margin: 0px auto;
 }
 
 @media only screen and (min-width: 768px) {

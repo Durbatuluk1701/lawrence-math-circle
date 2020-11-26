@@ -1,9 +1,7 @@
-import Container from "@material-ui/core/Container"
-
 export const Home = () => {
     return (
-        <Container>
-            <h1>Home</h1>
-        </Container>
+        <div>
+            <h1 className="centered">Home</h1>
+        </div>
     )
 }
