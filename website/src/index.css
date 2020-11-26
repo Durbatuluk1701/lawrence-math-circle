@@ -15,3 +15,32 @@ code {
 #logo {
   width: 100%;
 }
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+#navbar > * {
+  width: 25%;
+  border: 0.5px solid gray;
+  text-decoration: none;
+  color: #055087;
+  text-align: center;
+}
+
+#navbar > *:hover {
+  background-color: aquamarine;
+}
+
+.currentLink {
+  background-color: springgreen;
+}
+
+@media only screen and (min-width: 768px) {
+  #logo {
+    width: 50%;
+    margin: auto;
+  }
+}
