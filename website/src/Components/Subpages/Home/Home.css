@@ -1,0 +1,8 @@
+#missionQuote {
+    border: 1px solid grey;
+    box-shadow: 10px 10px 10px grey;
+    width: 80%;
+    margin: 0px auto;
+    padding: 5px;
+    text-align: center;
+}

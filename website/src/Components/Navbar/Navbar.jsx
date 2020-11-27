@@ -1,5 +1,3 @@
-// Modified from https://material-ui.com/components/tabs/#nav-tabs
-
 import React from 'react';
 import { NavLink } from "react-router-dom";
 
@@ -7,6 +5,7 @@ const NavBarLink = ({ href, children }) => {
     return (
         <NavLink
             activeClassName="currentLink"
+            className="navLinks"
             to={href}
             isActive={(match, location) => {
                 return (location.pathname === "/" && href === "/home") || (match ? match.isExact : false);
