@@ -1,0 +1,42 @@
+#cardContainer {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.personalCard {
+    width: 100%;
+    border: 1px solid grey;
+    box-shadow: 5px 5px 5px black;
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+}
+
+.personalCard:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    transition: 0.4s ease;
+}
+
+@media only screen and (min-width: 768px) {
+    .personalCard {
+        width: 48%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .personalCard {
+        width: 31%;
+    }
+
+    .personalCard:hover {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        transition: 0.4s ease;
+    }
+}

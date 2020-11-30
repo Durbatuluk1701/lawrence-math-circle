@@ -5,7 +5,9 @@ import {
     DeadLanding,
     Contact,
     AboutUs,
-    Calendar
+    Calendar,
+    Footer,
+    Curriculum
 } from "../../Components"
 import { Route, Switch } from "react-router-dom"
 
@@ -20,6 +22,9 @@ export const App = () => {
                 <Route path="/home">
                     <Home />
                 </Route>
+                <Route path="/curriculum">
+                    <Curriculum />
+                </Route>
                 <Route path="/calendar">
                     <Calendar />
                 </Route>
@@ -33,6 +38,7 @@ export const App = () => {
                     <DeadLanding />
                 </Route>
             </Switch>
+            <Footer />
         </>
     )
 }
