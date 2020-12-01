@@ -47,6 +47,7 @@ code {
   text-decoration: none;
   color: #055087;
   text-align: center;
+  font-size: large;
 }
 
 .navLinks:hover {
@@ -55,6 +56,39 @@ code {
 
 .currentLink {
   background-color: springgreen;
+}
+
+.subButtonLink {
+  width: 100%;
+  background: none;
+  border: none;
+  text-decoration: none;
+  color: #055087;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: large;
+}
+
+.subButtonLink:focus {
+  outline: none;
+}
+
+.subMenuLinks {
+  width: 100%;
+  border: 0.5px solid gray;
+  text-decoration: none;
+  color: #055087;
+  text-align: center;
+}
+
+.subMenuLinks:hover {
+  background-color: aquamarine;
+}
+
+.MuiPaper-Root {
+  width: 100%;
 }
 
 .centered {
@@ -73,6 +107,10 @@ code {
   }
   .navLinks {
     width: 25%;
+  }
+  body {
+    width: 90%;
+    margin: 0 auto;
   }
 }
 

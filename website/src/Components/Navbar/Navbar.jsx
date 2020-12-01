@@ -1,48 +1,11 @@
 import React, { useState } from 'react';
-import { NavLink } from "react-router-dom";
-import { Button, Menu, MenuItem } from "@material-ui/core";
-
-const DropDown = ({ subMenuItems }) => {
-    const [show, setShow] = useState(false);
-
-    const createElement = ({ href, children }, index) => {
-        let position = document.getElementById("dropdown1").getBoundingClientRect();
-        console.log(position);
-        let newElem = document.createElement("div");
-        newElem.className = "navLinks"
-        newElem.style.width = `${position.width}px`;
-        newElem.style.height = `${position.height}px`;
-        newElem.style.position = "absolute";
-        newElem.style.zIndex = "10";
-        newElem.style.top = `${position.y}px`;
-        newElem.style.left = `${position.x}px`;
-        newElem.innerHTML = children;
-        document.body.before(newElem);
-    }
-
-    const kickOff = () => {
-        setShow(!show);
-        subMenuItems.forEach(({ href, children }, index) => {
-            createElement({ href, children }, index);
-        })
-    }
-
-    return (
-        <div
-            id="dropdown1"
-            className="navLinks"
-            onClick={() => {
-                kickOff();
-            }}>
-            {
-                show ? "" : "\\/"
-            }
-        </div>
-    )
-}
-
+import { NavLink, useHistory } from "react-router-dom";
+import { withStyles, Button, Menu, MenuItem } from "@material-ui/core";
 
 const SimpleMenu = ({ menuName, subItems }) => {
+
+    const history = useHistory();
+
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleClick = (event) => {
@@ -53,12 +16,32 @@ const SimpleMenu = ({ menuName, subItems }) => {
         setAnchorEl(null);
     };
 
+    const handleClickedClose = (href) => {
+        setAnchorEl(null);
+        history.push(href);
+    }
+
     return (
-        <div>
-            <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                {menuName}
-            </Button>
+        <div
+            className="navLinks"
+        >
+            <button
+                aria-controls="simple-menu"
+                aria-haspopup="true"
+                onClick={handleClick}
+                className="subButtonLink"
+            >{menuName}</button>
             <Menu
+                elevation={0}
+                getContentAnchorEl={null}
+                anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "center",
+                }}
+                transformOrigin={{
+                    vertical: "top",
+                    horizontal: "center"
+                }}
                 id="simple-menu"
                 anchorEl={anchorEl}
                 keepMounted
@@ -70,14 +53,13 @@ const SimpleMenu = ({ menuName, subItems }) => {
                         return (
                             <MenuItem
                                 key={`${href}MenuItem`}
-                                onClick={handleClose}
+                                onClick={() => {
+                                    handleClickedClose(href);
+                                }}
+                                width="100%"
+                                height="100%"
                             >
-                                <NavBarLink
-                                    key={`${href}NavLink`}
-                                    href={href}
-                                >
-                                    {children}
-                                </NavBarLink>
+                                {children}
                             </MenuItem>
                         )
                     })
