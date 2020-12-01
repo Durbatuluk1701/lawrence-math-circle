@@ -1,21 +1,21 @@
 import { PersonalCard } from "./PersonalCard"
-import "./AboutUs.css"
+import "./People.css"
 
-export const AboutUs = () => {
+export const People = () => {
     const cards = [
         {
             name: "Will Thomas",
-            imageUrl: "./AboutUsPhotos/Picard and Gandalf and Balrog.png",
+            imageUrl: "http://localhost:3000/AboutUsPhotos/Picard and Gandalf and Balrog.png",
             description: "Lorem Ipsum Dolor"
         },
         {
             name: "Durbatuluk 1701",
-            imageUrl: "./AboutUsPhotos/GitHub Profile Pic.jpg",
+            imageUrl: "http://localhost:3000/AboutUsPhotos/GitHub Profile Pic.jpg",
             description: "Programming stuff mumbo jumbo"
         },
         {
             name: "Mr. Conference",
-            imageUrl: "./AboutUsPhotos/conference room.bmp",
+            imageUrl: "http://localhost:3000/AboutUsPhotos/conference room.bmp",
             description: "I am a conference room"
         }
     ]

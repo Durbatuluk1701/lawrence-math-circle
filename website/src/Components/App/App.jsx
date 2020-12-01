@@ -4,7 +4,7 @@ import {
     Home,
     DeadLanding,
     Contact,
-    AboutUs,
+    People,
     Calendar,
     Footer,
     Curriculum
@@ -28,8 +28,8 @@ export const App = () => {
                 <Route path="/calendar">
                     <Calendar />
                 </Route>
-                <Route path="/about-us">
-                    <AboutUs />
+                <Route path="/about-lmc/people">
+                    <People />
                 </Route>
                 <Route path="/contact">
                     <Contact />

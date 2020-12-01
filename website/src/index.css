@@ -4,17 +4,14 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  /* 
+  Add this is we choose to allow scrolling while open menu
+  overflow: auto !important;
+  */
 }
 
 #headerDiv {
@@ -47,6 +44,7 @@ code {
   text-decoration: none;
   color: #055087;
   text-align: center;
+  font-size: large;
 }
 
 .navLinks:hover {
@@ -55,6 +53,31 @@ code {
 
 .currentLink {
   background-color: springgreen;
+}
+
+.subButtonLink {
+  width: 100%;
+  background: none;
+  border: none;
+  text-decoration: none;
+  color: #055087;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: large;
+}
+
+.subButtonLink:focus {
+  outline: none;
+}
+
+.subMenuLinks {
+  color: #055087 !important;
+}
+
+.subMenuLinks:hover {
+  background-color: aquamarine;
 }
 
 .centered {
@@ -72,7 +95,11 @@ code {
     flex-direction: row;
   }
   .navLinks {
-    width: 25%;
+    width: 20%;
+  }
+  body {
+    width: 90%;
+    margin: 0 auto;
   }
 }
 
