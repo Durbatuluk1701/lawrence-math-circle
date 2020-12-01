@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink, useHistory } from "react-router-dom";
-import { withStyles, Button, Menu, MenuItem } from "@material-ui/core";
+import { Menu, MenuItem } from "@material-ui/core";
 
 const SimpleMenu = ({ menuName, subItems }) => {
 
@@ -17,8 +17,7 @@ const SimpleMenu = ({ menuName, subItems }) => {
     };
 
     const handleClickedClose = (href) => {
-        setAnchorEl(null);
-        history.push(href);
+
     }
 
     return (
@@ -54,10 +53,13 @@ const SimpleMenu = ({ menuName, subItems }) => {
                             <MenuItem
                                 key={`${href}MenuItem`}
                                 onClick={() => {
+                                    setAnchorEl(null);
+                                    history.push(href);
                                     handleClickedClose(href);
                                 }}
-                                width="100%"
-                                height="100%"
+                                classes={{
+                                    root: "subMenuLinks"
+                                }}
                             >
                                 {children}
                             </MenuItem>
@@ -85,26 +87,34 @@ const NavBarLink = ({ href, children }) => {
 }
 
 export const Navbar = () => {
-    const subMenuItems = [
-        { href: "/calendar/chow", children: "Chow" },
-        { href: "/calendar/moo", children: "Moo" }
-    ];
     return (
         <nav>
             <div id="navbar">
                 <NavBarLink href="/home">
                     Home
                 </NavBarLink>
-                <SimpleMenu menuName="Calendar" subItems={subMenuItems} />
-                <NavBarLink href="/curriculum">
-                    Curriculum
-                </NavBarLink>
-                <NavBarLink href="/calendar">
-                    Calendar
-                </NavBarLink>
-                <NavBarLink href="/about-us">
-                    About Us
-                </NavBarLink>
+                <SimpleMenu
+                    menuName="Program"
+                    subItems={[
+                        { href: "/program/6th-graders", children: "6th Graders" },
+                        { href: "/program/curriculum", children: "Curriculum" }
+                    ]}
+                />
+                <SimpleMenu
+                    menuName="About LMC"
+                    subItems={[
+                        { href: "/about-lmc/people", children: "People" },
+                        { href: "/about-lmc/mission-statement", children: "Mission Statement" }
+                    ]}
+                />
+                <SimpleMenu
+                    menuName="Others"
+                    subItems={[
+                        { href: "/others/gallery", children: "Gallery" },
+                        { href: "/others/archive", children: "Archive" },
+                        { href: "/others/faq", children: "Frequently Asked Questions" }
+                    ]}
+                />
                 <NavBarLink href="/contact">
                     Contact
                 </NavBarLink>
