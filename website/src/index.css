@@ -39,11 +39,11 @@ code {
   display: flex;
   flex-direction: column;
   width: 100%;
+  background-color: #3090d4;
 }
 
 .navLinks {
   width: 100%;
-  border: 0.5px solid gray;
   text-decoration: none;
   color: #055087;
   text-align: center;
