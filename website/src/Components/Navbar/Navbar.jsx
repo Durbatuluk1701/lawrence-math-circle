@@ -1,12 +1,14 @@
-import React from 'react';
-import { NavLink, useHistory } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { NavLink, useHistory, useLocation } from "react-router-dom";
 import { Menu, MenuItem } from "@material-ui/core";
 
-const SimpleMenu = ({ menuName, subItems }) => {
+const SimpleMenu = ({ menuName, subItems }, checkActive) => {
 
     const history = useHistory();
+    const location = useLocation();
 
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const [active, setActive] = React.useState(false);
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -20,6 +22,18 @@ const SimpleMenu = ({ menuName, subItems }) => {
 
     }
 
+    useEffect(() => {
+        for (let i = 0; i < subItems.length; i++) {
+            debugger;
+            let href = subItems[i].href;
+            if (location.pathname.includes(href)) {
+                setActive(true);
+                return;
+            }
+        }
+        setActive(false);
+    }, [subItems, location])
+
     return (
         <div
             className="navLinks"
@@ -28,7 +42,7 @@ const SimpleMenu = ({ menuName, subItems }) => {
                 aria-controls="simple-menu"
                 aria-haspopup="true"
                 onClick={handleClick}
-                className="subButtonLink"
+                className={active ? "activeSubButtonLink" : "subButtonLink"}
             >{menuName}</button>
             <Menu
                 elevation={0}
