@@ -96,8 +96,9 @@ export const Navbar = () => {
                 <SimpleMenu
                     menuName="Program"
                     subItems={[
-                        { href: "/program/6th-graders", children: "6th Graders" },
-                        { href: "/program/curriculum", children: "Curriculum" }
+                        { href: "/program/sixth-graders", children: "6th Graders" },
+                        { href: "/program/curriculum", children: "Curriculum" },
+                        { href: "/program/calendar", children: "Calendar" }
                     ]}
                 />
                 <SimpleMenu

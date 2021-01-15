@@ -1,12 +1,15 @@
-import { Navbar } from "./Navbar/Navbar"
-import { App } from "./App/App"
-import { Header } from "./Header/Header"
-import { Home } from "./Subpages/Home/Home"
-import { DeadLanding } from "./Subpages/DeadLanding/DeadLanding"
-import { Contact } from "./Subpages/Contact/Contact"
-import { People } from "./Subpages/AboutLMC/People"
-import { Calendar } from "./Subpages/Calendar/Calendar"
-import { Footer } from "./Footer/Footer"
-import { Curriculum } from "./Subpages/Curriculum/Curriculum"
-
-export { Navbar, App, Header, Home, DeadLanding, Contact, People, Calendar, Footer, Curriculum };
+export { Navbar } from "./Navbar/Navbar"
+export { App } from "./App/App"
+export { Header } from "./Header/Header"
+export { Home } from "./Subpages/Home/Home"
+export { DeadLanding } from "./Subpages/DeadLanding/DeadLanding"
+export { Contact } from "./Subpages/Contact/Contact"
+export { People } from "./Subpages/AboutLMC/People"
+export { Calendar } from "./Subpages/Program/Calendar/Calendar"
+export { Footer } from "./Footer/Footer"
+export { Curriculum } from "./Subpages/Program/Curriculum/Curriculum"
+export { Archive } from "./Subpages/Others/Archive/Archive"
+export { MissionStatement } from "./Subpages/AboutLMC/MissionStatement/MissionStatement"
+export { Gallery } from "./Subpages/Others/Gallery/Gallery";
+export { FAQ } from "./Subpages/Others/FAQ/FAQ";
+export { SixthGraders } from "./Subpages/Program/SixthGraders/SixthGraders";

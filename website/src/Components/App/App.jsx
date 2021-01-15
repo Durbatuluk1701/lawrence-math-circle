@@ -1,44 +1,50 @@
 import React from "react"
-import {
-    Header,
-    Home,
-    DeadLanding,
-    Contact,
-    People,
-    Calendar,
-    Footer,
-    Curriculum
-} from "../../Components"
+import * as C from "../../Components"
 import { Route, Switch } from "react-router-dom"
 
 export const App = () => {
     return (
         <>
-            <Header />
+            <C.Header />
             <Switch>
                 <Route exact path="/">
-                    <Home />
+                    <C.Home />
                 </Route>
                 <Route path="/home">
-                    <Home />
+                    <C.Home />
                 </Route>
-                <Route path="/curriculum">
-                    <Curriculum />
+                <Route path="/program/calendar">
+                    <C.Calendar />
                 </Route>
-                <Route path="/calendar">
-                    <Calendar />
+                <Route path="/program/sixth-graders">
+                    <C.SixthGraders />
+                </Route>
+                <Route path="/program/curriculum">
+                    <C.Curriculum />
                 </Route>
                 <Route path="/about-lmc/people">
-                    <People />
+                    <C.People />
+                </Route>
+                <Route path="/about-lmc/mission-statement">
+                    <C.MissionStatement />
                 </Route>
                 <Route path="/contact">
-                    <Contact />
+                    <C.Contact />
+                </Route>
+                <Route path="/others/gallery">
+                    <C.Gallery />
+                </Route>
+                <Route path="/others/archive">
+                    <C.Archive />
+                </Route>
+                <Route path="/others/faq">
+                    <C.FAQ />
                 </Route>
                 <Route path="*">
-                    <DeadLanding />
+                    <C.DeadLanding />
                 </Route>
             </Switch>
-            <Footer />
+            <C.Footer />
         </>
     )
 }
